@@ -1,11 +1,12 @@
-import { AspectRatio, HStack, Image, Text } from "@chakra-ui/react";
-import logo from "../images/logo2.webp";
+import { HStack, Image } from "@chakra-ui/react";
+import ColorModeToggle from "./ColorModeToggle";
+import Logo from "./Logo";
 
 const NavBar = () => {
   return (
-    <HStack>
-      <Image src={logo} alt="Eshan" boxSize={"100px"} />
-      <Text>NavBar</Text>
+    <HStack justifyContent="space-between" padding="10px">
+      <Logo />
+      <ColorModeToggle />
     </HStack>
   );
 };
