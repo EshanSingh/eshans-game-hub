@@ -1,4 +1,4 @@
-import { HStack, Image, useColorMode } from "@chakra-ui/react";
+import { Image, useColorMode } from "@chakra-ui/react";
 import logo from "../images/logo2.webp";
 import logoDark from "../images/logo2dark.webp";
 
