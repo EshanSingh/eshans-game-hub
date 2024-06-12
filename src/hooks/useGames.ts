@@ -25,6 +25,7 @@ const useGames = (search: GameSearch) =>
         genres: search.genre?.id,
         platforms: search.genre?.id,
         ordering: search.sortOrder,
+        search: search.searchText,
       },
     },
     [search]
