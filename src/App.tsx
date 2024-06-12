@@ -11,6 +11,7 @@ import SortSelector from "./components/SortSelector";
 export interface GameSearch {
   genre: Genre | null;
   platform: Platform | null;
+  sortOrder: string;
 }
 
 function App() {
@@ -40,7 +41,12 @@ function App() {
             selectedPlatform={search.platform}
             onSelectPlatform={(platform) => setSearch({ ...search, platform })}
           />
-          <SortSelector />
+          <SortSelector
+            sortOrder={search.sortOrder}
+            onSelectSortOrder={(sortOrder) =>
+              setSearch({ ...search, sortOrder })
+            }
+          />
         </HStack>
         <GameGrid search={search} />
       </GridItem>

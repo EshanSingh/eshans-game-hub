@@ -20,7 +20,13 @@ export interface Game {
 const useGames = (search: GameSearch) =>
   useData<Game>(
     "/games",
-    { params: { genres: search.genre?.id, platforms: search.genre?.id } },
+    {
+      params: {
+        genres: search.genre?.id,
+        platforms: search.genre?.id,
+        ordering: search.sortOrder,
+      },
+    },
     [search]
   );
 
