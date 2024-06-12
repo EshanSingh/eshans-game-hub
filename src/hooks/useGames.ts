@@ -1,4 +1,5 @@
 import useData from "./useData";
+import { GameSearch } from "../App";
 
 // Platform info
 export interface Platform {
@@ -16,7 +17,12 @@ export interface Game {
   metacritic: number;
 }
 
-const useGames = () => useData<Game>("/games");
+const useGames = (search: GameSearch) =>
+  useData<Game>(
+    "/games",
+    { params: { genres: search.genre?.id, platforms: search.genre?.id } },
+    [search]
+  );
 
 // export
 export default useGames;
