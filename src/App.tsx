@@ -7,6 +7,7 @@ import { useState } from "react";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/usePlatforms";
 import SortSelector from "./components/SortSelector";
+import GameHeading from "./components/GameHeading";
 
 export interface GameSearch {
   genre: Genre | null;
@@ -39,22 +40,25 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area={"main"}>
-        <Flex paddingLeft={2} marginBottom={5}>
-          <Box marginRight={5}>
-            <PlatformSelector
-              selectedPlatform={search.platform}
-              onSelectPlatform={(platform) =>
-                setSearch({ ...search, platform })
+        <Box paddingLeft={2}>
+          <GameHeading search={search} />
+          <Flex marginBottom={5}>
+            <Box marginRight={5}>
+              <PlatformSelector
+                selectedPlatform={search.platform}
+                onSelectPlatform={(platform) =>
+                  setSearch({ ...search, platform })
+                }
+              />
+            </Box>
+            <SortSelector
+              sortOrder={search.sortOrder}
+              onSelectSortOrder={(sortOrder) =>
+                setSearch({ ...search, sortOrder })
               }
             />
-          </Box>
-          <SortSelector
-            sortOrder={search.sortOrder}
-            onSelectSortOrder={(sortOrder) =>
-              setSearch({ ...search, sortOrder })
-            }
-          />
-        </Flex>
+          </Flex>
+        </Box>
         <GameGrid search={search} />
       </GridItem>
     </Grid>
