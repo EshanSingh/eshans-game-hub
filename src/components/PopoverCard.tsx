@@ -16,8 +16,6 @@ interface PopoverCardProps {
 }
 
 const PopoverCard = ({ game }: PopoverCardProps) => {
-  const tags = game.tags.map((obj) => obj.name);
-
   return (
     <Popover>
       <PopoverTrigger>
