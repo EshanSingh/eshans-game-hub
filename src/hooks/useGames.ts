@@ -16,6 +16,8 @@ export interface Game {
   parent_platforms: { platform: Platform }[];
   metacritic: number;
   rating_top: number;
+  esrb_rating: { name: string };
+  tags: [{ name: string; language: string }];
 }
 
 const useGames = (search: GameSearch) =>
@@ -27,6 +29,7 @@ const useGames = (search: GameSearch) =>
         platforms: search.genre?.id,
         ordering: search.sortOrder,
         search: search.searchText,
+        metacritic: search.safeMode ? "30, 100" : "",
       },
     },
     [search]

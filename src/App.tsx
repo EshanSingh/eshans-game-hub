@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
@@ -8,12 +8,14 @@ import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/usePlatforms";
 import SortSelector from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
+import SafeModeToggle from "./components/SafeModeToggle";
 
 export interface GameSearch {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
   searchText: string;
+  safeMode: boolean;
 }
 
 function App() {
@@ -57,6 +59,29 @@ function App() {
                 setSearch({ ...search, sortOrder })
               }
             />
+            <SafeModeToggle
+              safeMode={search.safeMode}
+              toggleSafeMode={() =>
+                search.safeMode
+                  ? setSearch({ ...search, safeMode: false })
+                  : setSearch({ ...search, safeMode: true })
+              }
+            />
+            <Box>
+              <Button
+                onClick={() =>
+                  setSearch({
+                    ...search,
+                    genre: null,
+                    platform: null,
+                    sortOrder: "",
+                    searchText: "",
+                  })
+                }
+              >
+                Reset
+              </Button>
+            </Box>
           </Flex>
         </Box>
         <GameGrid search={search} />

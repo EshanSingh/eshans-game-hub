@@ -4,6 +4,7 @@ import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
 import { GameSearch } from "../App";
+import PopoverCard from "./PopoverCard";
 
 interface GameGridProps {
   search: GameSearch;
@@ -32,7 +33,7 @@ const GameGrid = ({ search }: GameGridProps) => {
         ))}
       {data.map((game) => (
         <GameCardContainer key={game.id}>
-          <GameCard game={game} />
+          <PopoverCard game={game} />
         </GameCardContainer>
       ))}
     </SimpleGrid>

@@ -15,6 +15,7 @@ const SearchInput = ({ onSearch }: SearchInputProps) => {
         event.preventDefault();
         if (ref.current) {
           onSearch(ref.current.value);
+          ref.current.value = "";
         }
       }}
     >
