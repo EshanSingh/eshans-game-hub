@@ -15,7 +15,7 @@ const GameGrid = ({ search }: GameGridProps) => {
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
   if (error) {
-    return <Text>{error}</Text>;
+    return <Text>{error.message}</Text>;
   }
 
   return (
@@ -30,7 +30,7 @@ const GameGrid = ({ search }: GameGridProps) => {
             <GameCardSkeleton />
           </GameCardContainer>
         ))}
-      {data.map((game) => (
+      {data?.results.map((game) => (
         <GameCardContainer key={game.id}>
           <PopoverCard game={game} />
         </GameCardContainer>

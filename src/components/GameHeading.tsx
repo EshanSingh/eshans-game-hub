@@ -7,7 +7,7 @@ interface GameHeadingProps {
 
 const GameHeading = ({ search }: GameHeadingProps) => {
   const heading = `${
-    (search.genre || search.platform || search.searchText) && "Searching for"
+    search.genre || search.platform || search.searchText ? "Searching for" : ""
   } ${search.searchText ? '"' + search.searchText + '"' + " in " : ""}${
     search.platform?.name || ""
   } ${search.genre?.name || ""} Games`;

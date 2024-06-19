@@ -14,6 +14,8 @@ Features Include
 - Emoji rating system based on player ratings (from Rawg)
 - Platform display showing compatible platforms for games
 
-Built Using: React + Vite, Chakra, Axios, Rawg for game info
+NOTE: RAWG get requests often get blocked by CORS policies, thus network errors may occur, reloading page a few times should work
 
-Hosted at: https://game-hub-1ane.vercel.app/
+Built Using: React + Vite, Chakra, Axios, Rawg API for game info
+
+Hosted at: https://game-hub-1ane.vercel.app/, alternate URL: (https://eshans-game-finder.vercel.app/)
