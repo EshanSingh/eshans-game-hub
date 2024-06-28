@@ -1,4 +1,6 @@
+import { Genre } from "./Genre";
 import { Platform } from "./Platform";
+import { Publisher } from "./Publisher";
 
 // Game info
 
@@ -13,4 +15,6 @@ export interface Game {
   tags: [{ name: string; language: string }];
   slug: string;
   description_raw: string;
+  genres: Genre[];
+  publishers: Publisher[];
 }
