@@ -9,7 +9,7 @@ import {
   PopoverTrigger,
 } from "@chakra-ui/react";
 import GameCard from "./GameCard";
-import { Game } from "../hooks/useGames";
+import { Game } from "../entities/Game";
 
 interface PopoverCardProps {
   game: Game;
