@@ -4,7 +4,6 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import useGames from "../hooks/useGames";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
-import PopoverCard from "./PopoverCard";
 import GameCard from "./GameCard";
 
 const GameGrid = () => {
