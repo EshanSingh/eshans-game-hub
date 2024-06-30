@@ -5,6 +5,7 @@ import useGames from "../hooks/useGames";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
 import PopoverCard from "./PopoverCard";
+import GameCard from "./GameCard";
 
 const GameGrid = () => {
   // Get games and error status from server
@@ -15,6 +16,7 @@ const GameGrid = () => {
     return <Text>{error.message}</Text>;
   }
 
+  // Total fetched games count (accumulator increases by number of results from next pageload)
   const fetchedGamesCount =
     data?.pages.reduce((acc, page) => acc + page.results.length, 0) || 0;
 
@@ -40,7 +42,7 @@ const GameGrid = () => {
           <React.Fragment key={index}>
             {page.results.map((game) => (
               <GameCardContainer key={game.id}>
-                <PopoverCard game={game} />
+                <GameCard game={game} />
               </GameCardContainer>
             ))}
           </React.Fragment>

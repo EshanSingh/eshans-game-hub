@@ -1,4 +1,4 @@
-import { Image, SimpleGrid } from "@chakra-ui/react";
+import { Box, Image, Link, SimpleGrid } from "@chakra-ui/react";
 import useScreenshots from "../hooks/useScreenshots";
 
 interface Props {
@@ -15,7 +15,16 @@ const GameScreenshots = ({ gameId }: Props) => {
   return (
     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={2}>
       {data?.results.map((file) => (
-        <Image key={file.id} src={file.image} />
+        <Box
+          _hover={{
+            transform: "scale(1.05)",
+            transition: "transform .15s ease-in",
+          }}
+        >
+          <Link href={file.image} isExternal>
+            <Image key={file.id} src={file.image} />
+          </Link>
+        </Box>
       ))}
     </SimpleGrid>
   );

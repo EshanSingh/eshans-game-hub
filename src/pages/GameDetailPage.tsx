@@ -15,17 +15,20 @@ const GameDetailPage = () => {
   if (error || !game) throw error;
 
   return (
-    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
-      <Box>
-        <Heading>{game.name}</Heading>
-        <ExpandableText>{game.description_raw}</ExpandableText>
-        <GameAttributes game={game} />
-      </Box>
-      <Box>
-        <GameTrailer gameId={game.id} />
-        <GameScreenshots gameId={game.id} />
-      </Box>
-    </SimpleGrid>
+    <>
+      <title>{game.name}</title>
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
+        <Box>
+          <Heading>{game.name}</Heading>
+          <ExpandableText>{game.description_raw}</ExpandableText>
+          <GameAttributes game={game} />
+        </Box>
+        <Box>
+          <GameTrailer gameId={game.id} />
+          <GameScreenshots gameId={game.id} />
+        </Box>
+      </SimpleGrid>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 import {
   Box,
   Popover,
+  PopoverAnchor,
   PopoverArrow,
   PopoverBody,
   PopoverCloseButton,
@@ -17,7 +18,7 @@ interface PopoverCardProps {
 
 const PopoverCard = ({ game }: PopoverCardProps) => {
   return (
-    <Popover>
+    <Popover trigger="hover">
       <PopoverTrigger>
         <Box role="button" borderRadius={10}>
           <GameCard game={game} />
