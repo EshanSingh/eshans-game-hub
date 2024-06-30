@@ -1,7 +1,6 @@
 import {
   Box,
   Popover,
-  PopoverAnchor,
   PopoverArrow,
   PopoverBody,
   PopoverCloseButton,
