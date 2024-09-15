@@ -18,6 +18,8 @@ Features Include
 
 NOTE: RAWG get requests often get blocked by CORS policies, thus network errors may occur, reloading page a few times should work
 
-Built Using: React + Vite, Reacty Query, React Router, Chakra, Axios, Rawg API for game info
+Built Using: React + Vite, React Query, React Router, Chakra, Axios, Rawg API for game info
 
 Hosted at: https://eshans-game-finder.vercel.app/, alternate URL: (https://game-hub-1ane.vercel.app/)
+
+Video Breakdown: https://www.youtube.com/watch?v=iH4Oxguznh4&ab_channel=EshanSingh
